@@ -1,0 +1,7 @@
+{{#link-to 'todos.new'}}New{{/link-to}}
+{{#each model as |todo index|}}
+    <p>
+        {{#link-to 'todos.todo' todo.id}}Todo {{index}}{{/link-to}}
+        <button {{action 'deleteTodo' todo}}>X</button>
+    </p>
+{{/each}}

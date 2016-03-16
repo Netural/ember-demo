@@ -1,0 +1,9 @@
+<h3>Add new Todo</h3>
+{{#if isLoading}}
+saving ...
+{{else}}
+<form {{action 'submitTodo' on='submit'}}>
+    {{input value=title}}
+    <button type="submit">Submit</button>
+</form>
+{{/if}}

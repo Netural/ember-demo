@@ -1,3 +1,10 @@
-<h2 id="title">Welcome to Ember</h2>
+<header>
+    {{#link-to 'todos'}}Todos{{/link-to}}
+    {{#if authentication.session.token}} | <button {{action 'logout'}}>Logout</button>{{/if}}
+</header>
 
-{{outlet}}
+<div class="container">
+    {{outlet}}
+</div>
+
+<footer>footer</footer>

@@ -1,0 +1,10 @@
+<p>
+    {{#if usernameError}}
+    <span>Geh in oasch</span>
+    {{/if}}
+    {{input type="text" value=username placeholder="Username"}}
+</p>
+<p>
+    {{input type="password" value=password placeholder="Password"}}
+</p>
+<button type="submit" disabled={{isSubmitDisabled}}>Login</button>

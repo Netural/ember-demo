@@ -25,6 +25,17 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none' http://10.28.0.37:3001 http://dev.reebok.ecatalogue.netural.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' http://dev.ecatalogue.netural.com http://dev.reebok.ecatalogue.netural.com", // Allow scripts from https://cdn.mxpnl.com
+      'font-src': "'self' http://dev.reebok.ecatalogue.netural.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+      'connect-src': "'self' http://10.28.0.37:3001 http://api.dev.ecatalogue.netural.com http://dev.reebok.ecatalogue.netural.com http://api.dev.reebok.ecatalogue.netural.com http://guestftp.netural.com http://qa-ecatalogue-adidas.adidas-group.com http://hp.qa.static.adidas.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+      'img-src': "'self' data: http://placehold.it https://placeholdit.imgix.net http://guestftp.netural.com http://dev.reebok.ecatalogue.netural.com http://qa-ecatalogue-adidas.adidas-group.com http://hp.qa.static.adidas.com http://dev.ecatalogue.netural.com/",
+      'style-src': "'self' 'unsafe-inline' http://dev.ecatalogue.netural.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+      'media-src': "'self' data: http://dev.reebok.ecatalogue.netural.com http://dev.ecatalogue.netural.com",
+      'object-src': "'self' 'default-src' http://dev.ecatalogue.netural.com",
+      'child-src': "'self' 'default-src' blob: http://dev.ecatalogue.netural.com" 
+    }
   }
 
   if (environment === 'test') {
